@@ -1,0 +1,93 @@
+/**
+ * ImpSprite styles
+ * Handles the Clippy sprite button and animations
+ */
+
+.sprite {
+  /* Reset button styles */
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+
+  /* Sprite container */
+  display: block;
+  position: relative;
+
+  /* Smooth hover effects */
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.sprite:hover {
+  transform: scale(1.05);
+}
+
+.sprite:active {
+  transform: scale(0.98);
+}
+
+.sprite:focus-visible {
+  outline: 2px solid #FFD700;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Idle animation - gentle hover effect */
+.sprite:not(.animating):not(.minimized) {
+  animation: idleHover 3s ease-in-out infinite;
+}
+
+@keyframes idleHover {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Minimized state - small clickable icon */
+.minimized {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 204, 0.9);
+  border: 2px solid #000;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.minimized:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.minimizedIcon {
+  transform: scale(0.35);
+  transform-origin: center center;
+  pointer-events: none;
+}
+
+/* During animation - disable hover effect */
+.animating {
+  animation: none !important;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .sprite:not(.animating):not(.minimized) {
+    animation: none;
+  }
+
+  .sprite:hover {
+    transform: none;
+  }
+
+  .minimized:hover {
+    transform: none;
+  }
+}

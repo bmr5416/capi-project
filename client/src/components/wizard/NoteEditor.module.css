@@ -1,0 +1,86 @@
+.noteEditor {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--color-border);
+}
+
+.label {
+  display: block;
+  font-size: 0.813rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.textarea {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  resize: vertical;
+  min-height: 4rem;
+  font-family: inherit;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: border-color var(--transition-fast) var(--ease-out),
+              box-shadow var(--transition-fast) var(--ease-out);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+  animation: focusPulse var(--transition-slow) var(--ease-out);
+}
+
+@keyframes focusPulse {
+  0% { box-shadow: 0 0 0 0 var(--color-primary-light); }
+  100% { box-shadow: 0 0 0 3px var(--color-primary-light); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .textarea:focus {
+    animation: none;
+  }
+}
+
+.textarea::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.saveButton {
+  padding: var(--space-1) var(--space-3);
+  font-size: 0.813rem;
+  font-weight: 500;
+  color: white;
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast) var(--ease-out),
+              opacity var(--transition-fast) var(--ease-out);
+}
+
+.saveButton:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.saveButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.unsavedIndicator {
+  font-size: 0.75rem;
+  color: var(--color-warning);
+  font-style: italic;
+}

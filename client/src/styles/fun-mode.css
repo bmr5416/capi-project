@@ -1,0 +1,301 @@
+/**
+ * Fun Mode Design Tokens
+ * Retro RPG/8-bit aesthetic activated via data-fun-mode="true"
+ * Works alongside light/dark mode for 4 possible theme combinations
+ */
+
+/* ===== BASE FUN MODE (LIGHT) ===== */
+[data-fun-mode="true"] {
+  /* Typography */
+  --font-family: "VT323", "Silkscreen", monospace;
+  --font-display: "Press Start 2P", monospace;
+  --font-ui: "Silkscreen", monospace;
+
+  /* Core Palette - Parchment/RPG */
+  --color-primary: #FFD700;           /* Gold/XP */
+  --color-primary-dark: #E5C100;
+  --color-primary-light: #FFAA5E;     /* Golden Loot */
+
+  /* Contrast-safe text colors for gold/orange backgrounds */
+  /* These stay dark in both light+fun and dark+fun modes */
+  --color-on-primary: #1A1008;        /* Dark text on gold */
+  --color-on-warning: #5C3D00;        /* Dark text on orange/yellow */
+  --color-on-attention: #7A2E00;      /* Dark text on attention orange */
+
+  /* 90s-authentic UI colors */
+  --color-button-bg: #C0C0C0;         /* Classic Win98 gray */
+  --color-button-text: #000000;       /* Black text on gray buttons */
+  --color-button-hover: #D4D4D4;      /* Lighter gray on hover */
+  --color-nav-active-bg: #A49468;     /* Aged brass - pressed state */
+  --color-nav-active-text: #1A1008;   /* Dark readable text */
+  --color-nav-active-border: #FFD700; /* Gold accent border */
+
+  /* Backgrounds - Parchment Theme */
+  --color-gray-50: #F4E4C1;           /* Parchment */
+  --color-gray-100: #E8D4A8;          /* Aged Paper */
+  --color-gray-200: #D4C498;
+  --color-gray-300: #C4B488;
+  --color-gray-400: #A49468;
+  --color-gray-500: #847448;
+  --color-gray-600: #5C4033;          /* Treasure Chest */
+  --color-gray-700: #3D2914;          /* Parchment Text */
+  --color-gray-800: #2D1B0E;
+  --color-gray-900: #1A1008;
+
+  /* Semantic Colors */
+  --color-success: #2D6A4F;           /* Nature Green */
+  --color-success-light: rgba(45, 106, 79, 0.2);
+  --color-error: #E63946;             /* Crimson HP */
+  --color-error-light: rgba(230, 57, 70, 0.2);
+  --color-warning: #FFAA5E;
+  --color-warning-light: rgba(255, 170, 94, 0.2);
+  --color-info: #4A90D9;              /* Mana Blue */
+  --color-info-light: rgba(74, 144, 217, 0.2);
+
+  /* Component Fallbacks */
+  --color-bg-primary: #FFECD6;        /* Parchment Glow */
+  --color-bg-secondary: #F4E4C1;
+  --color-bg-hover: #E8D4A8;
+  --color-bg-code: #E8D4A8;
+  --color-border: #C4A878;
+  --color-text-primary: #3D2914;
+  --color-text-secondary: #5C4033;
+  --color-text-placeholder: #847448;
+  --color-link: #4A90D9;
+
+  /* 90s-era Textured Patterns - Parchment/Paper grain */
+  --texture-main:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(61, 41, 20, 0.03) 2px,
+      rgba(61, 41, 20, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(61, 41, 20, 0.02) 2px,
+      rgba(61, 41, 20, 0.02) 4px
+    ),
+    linear-gradient(
+      135deg,
+      rgba(244, 228, 193, 0.4) 0%,
+      transparent 50%,
+      rgba(200, 180, 140, 0.3) 100%
+    );
+  --texture-sidebar:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 1px,
+      rgba(92, 64, 51, 0.04) 1px,
+      rgba(92, 64, 51, 0.04) 2px
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 236, 214, 0.9) 0%,
+      rgba(244, 228, 193, 0.95) 100%
+    );
+  --texture-card:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      transparent 40%,
+      rgba(196, 168, 120, 0.15) 100%
+    );
+
+  /* Pixel-perfect sizing - sharp edges */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+
+  /* Pixel shadows */
+  --shadow-sm: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 4px 4px 0 rgba(0, 0, 0, 0.4);
+  --shadow-lg: 6px 6px 0 rgba(0, 0, 0, 0.5);
+
+  /* Instant transitions for retro feel */
+  --transition-fast: 0ms;
+  --transition-base: 0ms;
+  --transition-content: 100ms;        /* Keep minimal for content */
+  --transition-slow: 0ms;
+  --transition-emphasis: 0ms;
+
+  /* Win98-style border variables */
+  --win98-bg: #C0C0C0;
+  --win98-border-light: #ffffff;
+  --win98-border-dark: #808080;
+  --win98-border-darker: #0a0a0a;
+  --win98-border-lighter: #dfdfdf;
+}
+
+/* ===== DARK + FUN MODE (Dungeon Theme) ===== */
+[data-theme="dark"][data-fun-mode="true"] {
+  /* Royal Purple dungeon theme */
+  --color-gray-50: #2D1B4E;           /* Royal Purple */
+  --color-gray-100: #3A3A5C;          /* Dungeon Stone */
+  --color-gray-200: #4A4A6C;
+  --color-gray-300: #5A5A7C;
+  --color-gray-400: #8D697A;          /* Mystic Rose */
+  --color-gray-500: #A49488;
+  --color-gray-600: #C4B4A8;
+  --color-gray-700: #E8D4A8;
+  --color-gray-800: #F4E4C1;
+  --color-gray-900: #FFECD6;
+
+  --color-bg-primary: #3A3A5C;
+  --color-bg-secondary: #2D1B4E;
+  --color-bg-hover: #4A4A6C;
+  --color-bg-code: #2D1B4E;
+  --color-border: #5A5A7C;
+  --color-text-primary: #FFECD6;
+  --color-text-secondary: #C4B4A8;
+  --color-text-placeholder: #8D697A;
+  --color-link: #00BBF9;              /* Ice Spell */
+
+  /* Gold accents pop on dark */
+  --color-primary: #FFD700;
+  --color-primary-light: #FFAA5E;
+
+  /* Contrast-safe text colors - stay dark even in dark mode */
+  --color-on-primary: #1A1008;        /* Dark text on gold */
+  --color-on-warning: #5C3D00;        /* Dark text on orange/yellow */
+  --color-on-attention: #7A2E00;      /* Dark text on attention orange */
+
+  /* 90s-authentic UI colors for dark mode */
+  --color-button-bg: #5A5A7C;         /* Dungeon stone gray */
+  --color-button-text: #FFECD6;       /* Light parchment text */
+  --color-button-hover: #6A6A8C;      /* Lighter dungeon stone */
+  --color-nav-active-bg: #4A4A6C;     /* Pressed dungeon stone */
+  --color-nav-active-text: #FFD700;   /* Gold text on dark */
+  --color-nav-active-border: #FFD700; /* Gold accent border */
+
+  /* Semantic colors adjusted */
+  --color-success: #30A46C;           /* Healing Herb */
+  --color-success-light: rgba(48, 164, 108, 0.25);
+  --color-error: #E23D28;             /* Critical Hit */
+  --color-error-light: rgba(226, 61, 40, 0.25);
+  --color-info: #00BBF9;              /* Ice Spell */
+  --color-info-light: rgba(0, 187, 249, 0.25);
+
+  /* Dark mode Win98 adjustments */
+  --win98-bg: #3A3A5C;
+  --win98-border-light: #5A5A7C;
+  --win98-border-dark: #2D1B4E;
+  --win98-border-darker: #1A1A2E;
+  --win98-border-lighter: #4A4A6C;
+
+  /* 90s-era Textured Patterns - Dungeon Stone */
+  --texture-main:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 236, 214, 0.02) 3px,
+      rgba(255, 236, 214, 0.02) 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(141, 105, 122, 0.03) 3px,
+      rgba(141, 105, 122, 0.03) 6px
+    ),
+    linear-gradient(
+      135deg,
+      rgba(45, 27, 78, 0.5) 0%,
+      transparent 50%,
+      rgba(90, 90, 124, 0.4) 100%
+    );
+  --texture-sidebar:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(141, 105, 122, 0.05) 2px,
+      rgba(141, 105, 122, 0.05) 4px
+    ),
+    linear-gradient(
+      180deg,
+      rgba(58, 58, 92, 0.95) 0%,
+      rgba(45, 27, 78, 0.98) 100%
+    );
+  --texture-card:
+    linear-gradient(
+      135deg,
+      rgba(90, 90, 124, 0.3) 0%,
+      transparent 40%,
+      rgba(45, 27, 78, 0.2) 100%
+    );
+}
+
+/* ===== GLOBAL ELEMENT OVERRIDES ===== */
+[data-fun-mode="true"] h1,
+[data-fun-mode="true"] h2,
+[data-fun-mode="true"] h3 {
+  font-family: var(--font-display);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.05em;
+}
+
+[data-fun-mode="true"] h1 {
+  font-size: 1.5rem;  /* Pixel fonts render larger */
+  line-height: 1.6;
+}
+
+[data-fun-mode="true"] h2 {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+[data-fun-mode="true"] h3 {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+[data-fun-mode="true"] h4 {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Body text uses VT323 */
+[data-fun-mode="true"] body {
+  font-family: var(--font-family);
+  font-size: 1.25rem;  /* VT323 needs larger size for readability */
+  letter-spacing: 0.02em;
+  background-image: var(--texture-main);
+}
+
+/* Buttons and inputs */
+[data-fun-mode="true"] button,
+[data-fun-mode="true"] input,
+[data-fun-mode="true"] select,
+[data-fun-mode="true"] textarea {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+}
+
+/* Links */
+[data-fun-mode="true"] a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+[data-fun-mode="true"] a:hover {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  [data-fun-mode="true"] *,
+  [data-fun-mode="true"] *::before,
+  [data-fun-mode="true"] *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,201 @@
+/**
+ * ImpBalloon styles
+ * Adapted from clippyjs (MIT License)
+ * Source: https://github.com/pi0/clippyjs/blob/master/assets/clippy.css
+ */
+
+.balloon {
+  /* Clippy-style balloon */
+  background: #FFC;
+  color: black;
+  padding: 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+  /* Size constraints */
+  max-width: 220px;
+  min-width: 140px;
+
+  /* Positioning */
+  position: absolute;
+  z-index: 1001;
+
+  /* Animation */
+  opacity: 0;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header bar */
+.header {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: white;
+  font-family: "Tahoma", "Segoe UI", sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px 4px 0 0;
+}
+
+.title {
+  flex: 1;
+  padding-left: 2px;
+}
+
+.dismissButton {
+  background: #c0c0c0;
+  border: 1px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  width: 16px;
+  height: 14px;
+  line-height: 10px;
+  text-align: center;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.dismissButton:hover {
+  background: #d4d4d4;
+}
+
+.dismissButton:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.dismissButton:focus-visible {
+  outline: 1px dotted black;
+  outline-offset: -2px;
+}
+
+/* Content area */
+.content {
+  padding: 8px;
+  font-family: "Microsoft Sans Serif", "Tahoma", "Segoe UI", sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* Blinking cursor during typing */
+.cursor {
+  display: inline-block;
+  width: 6px;
+  height: 12px;
+  background: black;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Tip pointer - base64 from clippy.css */
+.tip {
+  width: 10px;
+  height: 16px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAMAAAAlvKiEAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAlQTFRF///MAAAA////52QwgAAAAAN0Uk5T//8A18oNQQAAAGxJREFUeNqs0kEOwCAIRFHn3//QTUU6xMyyxii+jQosrTPkyPEM6IN3FtzIRk1U4dFeKWQiH6pRRowMVKEmvronEynkwj0uZJgR22+YLopPSo9P34wJSamLSU7lSIWLJU7NkNomNlhqxUeAAQC+TQLZyEuJBwAAAABJRU5ErkJggg==) no-repeat;
+  position: absolute;
+}
+
+/* Position variants for tip pointer */
+
+/* Top-left: balloon above and to the left of sprite */
+.top-left {
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 16px;
+}
+
+.top-left .tip {
+  top: 100%;
+  left: calc(100% - 50px);
+  background-position: 0 0;
+}
+
+/* Top-right: balloon above and to the right of sprite */
+.top-right {
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 16px;
+}
+
+.top-right .tip {
+  top: 100%;
+  left: 50px;
+  background-position: -10px 0;
+}
+
+/* Bottom-left: balloon below and to the left of sprite */
+.bottom-left {
+  top: 100%;
+  right: 0;
+  margin-top: 16px;
+}
+
+.bottom-left .tip {
+  bottom: 100%;
+  left: calc(100% - 50px);
+  background-position: 0 -16px;
+}
+
+/* Bottom-right: balloon below and to the right of sprite */
+.bottom-right {
+  top: 100%;
+  left: 0;
+  margin-top: 16px;
+}
+
+.bottom-right .tip {
+  bottom: 100%;
+  left: 50px;
+  background-position: -10px -16px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .balloon {
+    animation: none;
+    opacity: 1;
+  }
+
+  .cursor {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* Fun mode overrides - use pixel fonts when in fun mode */
+[data-fun-mode="true"] .content {
+  font-family: var(--font-family, "VT323", monospace);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+[data-fun-mode="true"] .header {
+  font-family: var(--font-ui, "Silkscreen", monospace);
+  font-size: 10px;
+}

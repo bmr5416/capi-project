@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Silkscreen&family=Pixelify+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary Colors - Wpromote Dark Blue */
+  --color-primary: rgb(37, 55, 70);
+  --color-primary-dark: rgb(20, 32, 41);
+  --color-primary-light: rgb(160, 216, 226);
+
+  /* Semantic Colors */
+  --color-success: #31A24C;
+  --color-success-light: #E6F4EA;
+
+  --color-warning: #F5A623;
+  --color-warning-light: #FEF3E2;
+
+  --color-error: rgb(245, 85, 66);
+  --color-error-light: #FEECEC;
+  --color-error-dark: rgb(220, 65, 50);
+
+  --color-info: rgb(160, 216, 226);
+  --color-info-light: #E8F5FD;
+
+  /* Additional semantic for StatusBadge */
+  --color-warning-text: rgb(153, 102, 0);
+  --color-attention: rgb(255, 152, 0);
+  --color-attention-light: rgb(255, 243, 224);
+  --color-attention-text: rgb(230, 81, 0);
+
+  /* Neutral Scale - Wpromote */
+  --color-gray-50: rgb(242, 240, 233);
+  --color-gray-100: rgb(238, 238, 238);
+  --color-gray-200: rgb(238, 238, 238);
+  --color-gray-300: rgb(176, 179, 182);
+  --color-gray-400: rgb(176, 179, 182);
+  --color-gray-500: rgb(176, 179, 182);
+  --color-gray-600: rgb(61, 85, 103);
+  --color-gray-700: rgb(37, 55, 70);
+  --color-gray-800: rgb(20, 32, 41);
+  --color-gray-900: rgb(20, 32, 41);
+
+  /* Component fallback variables */
+  --color-border: var(--color-gray-200);
+  --color-bg-primary: white;
+  --color-bg-secondary: var(--color-gray-50);
+  --color-bg-hover: var(--color-gray-200);
+  --color-bg-code: var(--color-gray-100);
+  --color-text-primary: var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-placeholder: var(--color-gray-400);
+  --color-link: var(--color-primary);
+
+  /* Typography */
+  --font-family: 'Open Sans', arial, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', Menlo, monospace;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-8: 48px;
+  --space-10: 64px;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --header-height: 60px;
+
+  /* Animation timing - per animations.md spec */
+  --transition-fast: 150ms;       /* Hover feedback */
+  --transition-base: 200ms;       /* Micro-interactions */
+  --transition-content: 250ms;    /* Content fade-in */
+  --transition-slow: 350ms;       /* Page transitions */
+  --transition-emphasis: 500ms;   /* Hero/emphasis */
+  --transition-loading: 8s;       /* Loading phrase rotation */
+
+  /* Animation easing - per animations.md spec */
+  --ease-out: cubic-bezier(0.0, 0, 0.2, 1);        /* Deceleration */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);     /* Standard */
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);   /* Snappy modern */
+}
+
+/* Dark theme - colors from design.md */
+[data-theme="dark"] {
+  /* Invert the neutral scale for dark mode */
+  --color-gray-50: rgb(20, 32, 41);
+  --color-gray-100: rgb(37, 55, 70);
+  --color-gray-200: rgb(61, 85, 103);
+  --color-gray-300: rgb(61, 85, 103);
+  --color-gray-400: rgb(176, 179, 182);
+  --color-gray-500: rgb(176, 179, 182);
+  --color-gray-600: rgb(200, 200, 200);
+  --color-gray-700: rgb(230, 230, 230);
+  --color-gray-800: rgb(242, 240, 233);
+  --color-gray-900: rgb(255, 255, 255);
+
+  /* Override component colors for dark mode */
+  --color-bg-primary: rgb(37, 55, 70);
+  --color-bg-secondary: rgb(20, 32, 41);
+  --color-bg-hover: rgb(61, 85, 103);
+  --color-bg-code: rgb(20, 32, 41);
+  --color-border: rgb(61, 85, 103);
+  --color-text-primary: rgb(255, 255, 255);
+  --color-text-secondary: rgb(176, 179, 182);
+  --color-text-placeholder: rgb(120, 130, 140);
+  --color-link: var(--color-primary-light);
+
+  /* Semantic colors adjusted for dark mode */
+  --color-success-light: rgba(49, 162, 76, 0.2);
+  --color-warning-light: rgba(245, 166, 35, 0.2);
+  --color-error-light: rgba(245, 85, 66, 0.2);
+  --color-info-light: rgba(160, 216, 226, 0.2);
+  --color-attention-light: rgba(255, 152, 0, 0.2);
+
+  /* Shadows for dark mode - more subtle */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Global reduced motion support - per animations.md spec */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-gray-900);
+  background-color: var(--color-gray-50);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+/* Utility classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

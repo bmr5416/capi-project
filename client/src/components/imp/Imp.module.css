@@ -1,0 +1,50 @@
+/**
+ * Imp container styles
+ * Fixed position in bottom-right corner
+ */
+
+.container {
+  /* Fixed positioning */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+
+  /* Flexbox for balloon + sprite layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+
+  /* Prevent text selection */
+  user-select: none;
+
+  /* Pointer events only on children */
+  pointer-events: none;
+}
+
+.container > * {
+  pointer-events: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .container {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+/* When sidebar is open, ensure Imp doesn't overlap content too much */
+@media (max-width: 1024px) {
+  .container {
+    bottom: 80px; /* Above any floating buttons */
+  }
+}
+
+/* Print - hide Imp */
+@media print {
+  .container {
+    display: none;
+  }
+}

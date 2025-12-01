@@ -1,0 +1,178 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  padding: var(--space-10) var(--space-6);
+  text-align: center;
+  /* Full viewport height minus header and some padding */
+  min-height: calc(100vh - 120px);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-gray-200);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.textWrapper {
+  position: relative;
+  max-width: 640px;
+  padding: var(--space-4) var(--space-6);
+}
+
+/* Decorative quote marks */
+.textWrapper::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.5em;
+  left: 0;
+  font-size: 4rem;
+  color: var(--color-primary-light);
+  font-family: Georgia, serif;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.text {
+  display: block;
+  color: var(--color-gray-700);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.7;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.slideIn {
+  animation: slideIn 350ms var(--ease-out, cubic-bezier(0.0, 0, 0.2, 1)) forwards;
+}
+
+.slideOut {
+  animation: slideOut 300ms var(--ease-out, cubic-bezier(0.0, 0, 0.2, 1)) forwards;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.98);
+  }
+}
+
+/* ===== SAYINGS CARD (Fun Mode only) ===== */
+.sayingsCard {
+  max-width: 600px;
+  margin-top: var(--space-4);
+  background: var(--color-bg-secondary, #f5f5f5);
+  border-left: 4px solid var(--color-primary);
+}
+
+.saying {
+  margin: 0;
+  color: var(--color-text-secondary, #666);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ===== FUN MODE OVERRIDES ===== */
+.funMode .sayingsCard {
+  background: #FFECD6;
+  border-left-color: #FFD700;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.funMode .saying {
+  font-family: "VT323", monospace;
+  font-size: 1.125rem;
+  font-style: normal;
+  color: #3D2914;
+}
+
+.funMode .textWrapper::before {
+  content: '>';  /* Terminal cursor instead of quote */
+  font-family: "Press Start 2P", monospace;
+  font-size: 1.5rem;
+  color: #FFD700;
+  opacity: 1;
+  animation: blink 1s step-end infinite;
+}
+
+.funMode .text {
+  font-family: "VT323", monospace;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: normal;
+  color: var(--color-text-primary);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Pixel-style spinner */
+.pixelSpinner {
+  width: 32px;
+  height: 32px;
+  border-radius: 0;
+  border-width: 4px;
+  border-color: var(--color-gray-300);
+  border-top-color: #FFD700;
+  animation: pixelSpin 0.6s steps(8) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes pixelSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+    border-top-color: var(--color-primary);
+    border-right-color: var(--color-primary);
+  }
+
+  .pixelSpinner {
+    animation: none;
+  }
+
+  .funMode .textWrapper::before {
+    animation: none;
+  }
+
+  .slideIn,
+  .slideOut {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

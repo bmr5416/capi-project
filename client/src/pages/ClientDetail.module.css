@@ -1,0 +1,190 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.backLink {
+  display: inline-block;
+  color: var(--color-gray-600);
+  margin-bottom: var(--space-4);
+  font-size: 0.875rem;
+}
+
+.backLink:hover {
+  color: var(--color-primary);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-6);
+}
+
+.clientInfo h1 {
+  font-size: 1.75rem;
+}
+
+.email {
+  color: var(--color-gray-600);
+  margin-top: var(--space-1);
+}
+
+.notesCard {
+  background: var(--color-gray-50);
+  margin-bottom: var(--space-6);
+}
+
+.section {
+  margin-bottom: var(--space-8);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.sectionHeader h2 {
+  font-size: 1.25rem;
+}
+
+.platformPicker {
+  margin-bottom: var(--space-4);
+}
+
+.platformPicker h3 {
+  font-size: 1rem;
+  margin-bottom: var(--space-4);
+}
+
+.platformGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-3);
+}
+
+.platformOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.platformOption:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.platformOption .platformIcon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.platformOption .platformName {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.platformOption .platformCategory {
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
+}
+
+.platformList {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.platformCard {
+  /* Platform card */
+}
+
+.platformHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+}
+
+.platformInfo {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.platformInfo .platformIcon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.platformIconFallback {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-gray-200);
+  color: var(--color-gray-600);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.platformInfo h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--space-1);
+}
+
+.platformInfo .platformCategory {
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
+}
+
+.platformProgress {
+  margin-bottom: var(--space-4);
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-gray-600);
+  margin-bottom: var(--space-2);
+}
+
+.platformActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.empty {
+  text-align: center;
+  padding: var(--space-6);
+  color: var(--color-gray-600);
+}
+
+.emptyHint {
+  font-size: 0.875rem;
+  margin-top: var(--space-2);
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: var(--space-10);
+  color: var(--color-gray-600);
+}
+
+.error {
+  color: var(--color-error);
+}

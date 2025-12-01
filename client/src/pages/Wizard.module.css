@@ -1,0 +1,440 @@
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.backLink {
+  display: inline-block;
+  color: var(--color-gray-600);
+  font-size: 0.875rem;
+  margin-bottom: var(--space-3);
+}
+
+.backLink:hover {
+  color: var(--color-primary);
+}
+
+.headerInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerInfo h1 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 1.5rem;
+}
+
+.platformIcon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.progressInfo {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  background: var(--color-gray-100);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.wizardLayout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-6);
+}
+
+.sidebar {
+  /* Sidebar */
+}
+
+.stepNav {
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-200);
+  padding: var(--space-4);
+}
+
+.phaseGroup {
+  margin-bottom: var(--space-4);
+}
+
+.phaseGroup:last-child {
+  margin-bottom: 0;
+}
+
+.phaseHeader {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  margin-bottom: var(--space-2);
+}
+
+.phaseHeader.complete .phaseNumber {
+  background: var(--color-success);
+  color: white;
+}
+
+.phaseNumber {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-gray-200);
+  color: var(--color-gray-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.phaseName {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.phaseDesc {
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
+}
+
+.phaseSteps {
+  margin-left: var(--space-3);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--color-gray-200);
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast) var(--ease-out);
+}
+
+.stepItem:hover {
+  background: var(--color-gray-50);
+}
+
+.stepItem.active {
+  background: var(--color-primary-light);
+}
+
+.stepItem.active .stepTitle {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.stepDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--color-gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.625rem;
+  flex-shrink: 0;
+}
+
+.stepItem.complete .stepDot {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: white;
+}
+
+.stepTitle {
+  font-size: 0.8125rem;
+  color: var(--color-gray-700);
+}
+
+.main {
+  /* Main content */
+}
+
+.stepCard {
+  margin-bottom: var(--space-4);
+}
+
+.stepHeader {
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.stepPhase {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.stepHeader h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-2);
+}
+
+.stepHeader p {
+  color: var(--color-gray-600);
+}
+
+.stepContent h3 {
+  font-size: 1rem;
+  margin-bottom: var(--space-3);
+}
+
+.checklist {
+  list-style: none;
+  margin-bottom: var(--space-5);
+}
+
+.checkItem {
+  padding: var(--space-2) 0;
+}
+
+.checkItem label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.checkItem input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.docLink {
+  margin-bottom: var(--space-5);
+}
+
+.docLink a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  font-weight: 500;
+  transition: background-color var(--transition-fast) var(--ease-out);
+}
+
+.docLink a:hover {
+  background: var(--color-gray-100);
+  text-decoration: none;
+}
+
+.docIcon {
+  color: var(--color-primary);
+}
+
+.markComplete {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.markCompleteLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.markCompleteLabel input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-success);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: var(--space-10);
+  color: var(--color-gray-600);
+}
+
+.error {
+  color: var(--color-error);
+}
+
+/* Save Error Banner */
+.saveError {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  background: var(--color-error-light, #fef2f2);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+  font-size: 0.875rem;
+}
+
+.dismissError {
+  background: none;
+  border: none;
+  color: var(--color-error);
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast) var(--ease-out);
+}
+
+.dismissError:hover {
+  opacity: 1;
+}
+
+/* Step Notes Section */
+.stepNotesSection {
+  margin: var(--space-5) 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.stepNotesSection h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-3);
+}
+
+/* Warning Modal */
+.warningOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.warningModal {
+  background: var(--color-bg-primary);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 400px;
+  width: 90%;
+}
+
+.warningModal p {
+  font-size: 0.938rem;
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-5);
+  line-height: 1.5;
+}
+
+.warningActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+@media (max-width: 768px) {
+  .wizardLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    order: 2;
+  }
+
+  .main {
+    order: 1;
+  }
+}
+
+/* ===== FUN MODE - Win98 Styling ===== */
+:global([data-fun-mode="true"]) .stepNav {
+  border-radius: 0;
+  border: 2px solid;
+  border-color: var(--win98-border-light, #fff) var(--win98-border-dark, #808080) var(--win98-border-dark, #808080) var(--win98-border-light, #fff);
+  box-shadow:
+    inset 1px 1px 0 var(--win98-border-lighter, #dfdfdf),
+    inset -1px -1px 0 var(--win98-border-darker, #0a0a0a),
+    4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+:global([data-fun-mode="true"]) .progressInfo {
+  border-radius: 0;
+  border: 2px solid;
+  border-color: var(--win98-border-dark, #808080) var(--win98-border-light, #fff) var(--win98-border-light, #fff) var(--win98-border-dark, #808080);
+  box-shadow:
+    inset 1px 1px 0 var(--win98-border-darker, #0a0a0a),
+    inset -1px -1px 0 var(--win98-border-lighter, #dfdfdf);
+}
+
+:global([data-fun-mode="true"]) .phaseNumber {
+  border-radius: 0;
+  border: 1px solid var(--win98-border-dark, #808080);
+}
+
+:global([data-fun-mode="true"]) .stepDot {
+  border-radius: 0;
+}
+
+:global([data-fun-mode="true"]) .stepItem {
+  border-radius: 0;
+}
+
+:global([data-fun-mode="true"]) .stepItem.active {
+  background: var(--color-nav-active-bg, #A49468);
+  border: 2px solid;
+  border-color: var(--win98-border-dark, #808080) var(--win98-border-light, #fff) var(--win98-border-light, #fff) var(--win98-border-dark, #808080);
+}
+
+:global([data-fun-mode="true"]) .stepItem.active .stepTitle {
+  color: var(--color-nav-active-text, #1A1008);
+}
+
+:global([data-fun-mode="true"]) .docLink a {
+  border-radius: 0;
+  border: 2px solid;
+  border-color: var(--win98-border-light, #fff) var(--win98-border-dark, #808080) var(--win98-border-dark, #808080) var(--win98-border-light, #fff);
+}
+
+:global([data-fun-mode="true"]) .warningModal {
+  border-radius: 0;
+  border: 2px solid;
+  border-color: var(--win98-border-light, #fff) var(--win98-border-dark, #808080) var(--win98-border-dark, #808080) var(--win98-border-light, #fff);
+  box-shadow:
+    inset 1px 1px 0 var(--win98-border-lighter, #dfdfdf),
+    inset -1px -1px 0 var(--win98-border-darker, #0a0a0a),
+    6px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+:global([data-fun-mode="true"]) .saveError {
+  border-radius: 0;
+}
