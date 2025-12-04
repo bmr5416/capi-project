@@ -20,7 +20,7 @@ capi-project/
 │       ├── components/
 │       │   ├── common/         # Button, Card, Icon, Layout, StatusBadge, SettingsBar
 │       │   └── wizard/         # ChecklistItem, NoteEditor
-│       ├── contexts/           # ThemeContext, FunModeContext
+│       ├── contexts/           # FunModeContext, ImpContext
 │       ├── data/               # Platform/wizard definitions, funModeMessages
 │       ├── hooks/              # useClients, useMinLoadingTime
 │       ├── pages/              # Dashboard, ClientDetail, Wizard, Docs
@@ -41,7 +41,7 @@ capi-project/
 - 6-phase setup wizard per platform
 - Checklist-based progress tracking at step and item level
 - Notes attached to steps and checklist items
-- Dark mode support
+- Always-on dark mode
 - Fun Mode: retro Win98-style theme with pixel fonts and 3D borders
 - Markdown documentation viewer
 

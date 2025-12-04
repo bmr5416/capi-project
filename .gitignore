@@ -54,3 +54,7 @@ capi-coe-*.json
 .channels_cache*.json
 .vercel
 .env*.local
+
+# Project documentation
+CLAUDE.md
+.claude/

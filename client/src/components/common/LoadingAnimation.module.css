@@ -49,11 +49,11 @@
 }
 
 .slideIn {
-  animation: slideIn 350ms var(--ease-out, cubic-bezier(0.0, 0, 0.2, 1)) forwards;
+  animation: slideIn 175ms var(--ease-out, cubic-bezier(0.0, 0, 0.2, 1)) forwards;
 }
 
 .slideOut {
-  animation: slideOut 300ms var(--ease-out, cubic-bezier(0.0, 0, 0.2, 1)) forwards;
+  animation: slideOut 150ms var(--ease-out, cubic-bezier(0.0, 0, 0.2, 1)) forwards;
 }
 
 @keyframes spin {

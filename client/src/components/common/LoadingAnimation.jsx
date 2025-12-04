@@ -14,7 +14,7 @@ import styles from './LoadingAnimation.module.css';
  */
 export default function LoadingAnimation({
   phrases,
-  interval = 6000,
+  interval = 3000,
   className = '',
 }) {
   const { funMode } = useFunMode();
@@ -59,7 +59,7 @@ export default function LoadingAnimation({
       setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % activePhrases.length);
         setIsAnimating(false);
-      }, 350);
+      }, 175);
     }, interval);
 
     return () => clearInterval(timer);
@@ -74,8 +74,8 @@ export default function LoadingAnimation({
       setTimeout(() => {
         setSayingIndex((prev) => (prev + 1) % sayings.length);
         setSayingAnimating(false);
-      }, 350);
-    }, interval * 1.5); // 9s default - longer to read
+      }, 175);
+    }, interval * 1.5); // 4.5s default - longer to read
 
     return () => clearInterval(timer);
   }, [sayings, interval]);

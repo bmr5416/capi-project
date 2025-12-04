@@ -5,6 +5,9 @@ import App from './App';
 import './styles/index.css';
 import './styles/fun-mode.css';
 
+// Always use dark mode
+document.documentElement.setAttribute('data-theme', 'dark');
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>

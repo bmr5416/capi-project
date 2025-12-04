@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { ThemeProvider } from '../contexts/ThemeContext';
 import { FunModeProvider } from '../contexts/FunModeContext';
 import { ImpProvider } from '../contexts/ImpContext';
 
@@ -9,13 +8,11 @@ import { ImpProvider } from '../contexts/ImpContext';
  */
 export function AppProviders({ children }) {
   return (
-    <ThemeProvider>
-      <FunModeProvider>
-        <ImpProvider>
-          {children}
-        </ImpProvider>
-      </FunModeProvider>
-    </ThemeProvider>
+    <FunModeProvider>
+      <ImpProvider>
+        {children}
+      </ImpProvider>
+    </FunModeProvider>
   );
 }
 
